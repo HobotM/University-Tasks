@@ -1,0 +1,23 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>HTML5 Form Elements</title>
+</head>
+<body>
+<form action="http://tv-pi.duckdns.org/cgi-bin/html5form1.py" method="post">
+<label for="user">Userame: </label><input type="text" name="user" id="user" placeholder="Your username" autofocus required /><br />
+<label for="pwd">Password: </label><input type="password" name="pwd" id="pwd" required /><br />
+<label for="email">Email adress: </label><input type="email" name="email" id="email" placeholder="Enter your email address" autocomplete="on" required /><br />
+<label for="home">Homepage: </label><input type="url" name="home" id="home" placeholder="Enter your homepage URL" /><br />
+<label for="cars">Number of cars:</label> <input type="number" name="cars" id="cars" max="10" min="0" value="1" /><br />
+<label for="geekiness">Geek status:</label> novice<input type="range" name="geekiness" id="geekiness" min="0" max="5"  step="0.01" value="2.5"/>expert<br />
+<label for="departs">Departure date:</label><input type="date" name="departs" id="departs" /><br />
+<label>UK Postcode:<input type="text" pattern="[A-Za-z]{1,2}[0-9]{1,2} [0-9]{1}[A-Za-z]{2}" name="postcode" title="UK postcode" placeholder="AA1 2BB" />
+</label><br />
+<label for="tcolour">T-shirt colour:</label><input type="color" name="tcolour" id="tcolour"/><br />
+<input type="submit" value="Submit" />
+</form>
+</body>
+</html>

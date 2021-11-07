@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker</title>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+        $( "#checkin" ).datepicker({ 
+            minDate: "+0D", 
+            maxDate: "+1Y -1D",  
+            dateFormat: 'D d M yy',
+            altField:"#altCheckin",    
+            altFormat: "yy-mm-dd", 
+            numberOfMonths: 2,
+            onSelect : function() {
+                var d = new Date($( "#checkin" ).datepicker('getDate'));
+                console.log("checkin",d,"alt field", $("#altCheckin").val());
+                d.setDate(d.getDate()+1);
+                console.log("checkout on or after",d);
+                $( "#checkout" ).datepicker("option", "minDate",d);            
+            }
+        });
+        // duplicate (below) the checkin datepicker setup above on lines 13-27 inclusive
+        // change so it converts the checkout form element into a Datepicker
+        // configure checkout minDate to tomorrow
+        // configure checkout maxDate to 1 year
+        // configure altField (checkout AND checkin) for appropriate hidden form elements
+        // configure altFormat (checkout AND checkin) to the ISO 8601 date standard for year-month-day 
+        // edit the onSelect function to take the checkout date and configure checkin maxDate is as 1 day earlier than checkout
+        // change the console.log messages so you can tell which are checkin and which are checkout 
+        // put your ***checkout*** Datepicker code ***BELOW*** this line
+        
+        $( "#checkout" ).datepicker({ 
+            minDate: "+1D", 
+            maxDate: "+1Y",  
+            dateFormat: 'D d M yy',
+            altField:"#altCheckout",    
+            altFormat: "yy-mm-dd", 
+            numberOfMonths: 2,
+            onSelect : function() {
+                var d = new Date($( "#checkout" ).datepicker('getDate'));
+                console.log("checkin",d,"alt field", $("#altCheckout").val());
+                d.setDate(d.getDate()+1);
+                console.log("checkout on or after",d);
+                $( "#checkout" ).datepicker("option", "maxDate",d);            
+            }
+        });
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// put your ***checkout*** Datepicker code ***ABOVE*** this line
+  } );
+  </script>
+</head>
+<body>
+
+<form action="http://tv-pi.duckdns.org/cgi-bin/bookingDates.py"
+    method="post" >
+<!-- 
+Datepicker with human friendly date format for user interface but 
+these text form elements have no names are not sent to the server
+ -->
+<p>From: <input type="text" id="checkin" name="">
+To: <input type="text" id="checkout" name=""></p>
+<!--
+the hidden form elements have names so they are sent to the server 
+in the server friendly alternative format
+-->
+<input type="hidden" id="altCheckin" name="checkin">
+<input type="hidden" id="altCheckout" name="checkout">
+<p><input type="submit" value="Check Availability"></p>
+</fieldset>
+</form> 
+<!-- 
+Discussion of jQuery UI Widgets vs HTML5 Form Elements
+https://www.tjvantoll.com/speaking/slides/ui-widgets-vs-html5/portland/#/ 
+Datepicker Documentation and Demos
+https://jqueryui.com/datepicker/
+http://api.jqueryui.com/datepicker/
+CDN for jQUI including CSS
+https://code.jquery.com/
+--> 
+</body>
+</html>

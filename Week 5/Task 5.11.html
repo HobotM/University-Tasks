@@ -1,0 +1,36 @@
+<html><head>
+    <meta charset="utf-8">
+      <title>Skinflint's doubled salary offer</title>
+    <script type="text/javascript">
+    </script>
+    
+    
+    <body>
+      <h2>Memo - your doubled salary</h2>
+    
+      <p>Dear Employee,</p>
+    
+      <p>Please click below to accept or decline a doubled salary.</p>
+    
+      <p><img src="https://alan-jack.duckdns.org/tasks/JS/Completed%20Tasks/21%20Task%205.11%20-%20Doubled%20salary/yes.jpg" alt="Salary Chooser" width="369" height="137" onmouseenter="swap(0);" onmouseleave="swap(1);"> <img src="./no.jpg" alt="Salary Chooser" width="369" height="137"></p>
+    
+      <p>Yours sincerely,</p>
+    
+      <p>A Skinflint.</p>
+      <script>
+        let noImg = new Array(2);
+        let imgSrc = ["./no.jpg","./yes.jpg"];
+    
+        for(let i = 0;i<noImg.length;i++){
+          noImg[i] = new Image();
+          noImg[i].src = imgSrc[i];
+        }
+    
+        function swap(variable){
+          let yesImg = document.querySelector('img');
+          yesImg.src = noImg[variable].src;
+        }
+      </script>
+    
+    
+    </body></html>

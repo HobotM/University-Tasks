@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>COMP09006: example of FORM styling</h2><strong>Mark's computer survey</strong><br>
+    Please complete and submit the form below.
+  
+    <form method="post" action="http://pict.uws.ac.uk/cgi-davison/reflect.cgi" enctype="multipart/form-data">
+      <table>
+        <tbody><tr>
+          <td>Enter your name <input type="text" name="your_name"></td>
+  
+          <td>Enter your password <input type="password" name="pass"></td>
+        </tr>
+  
+        <tr>
+          <td>Enter your message<br>
+          <textarea name="message" rows="4" cols="30" readonly="readonly">I've added the READONLY
+          attribute, so on recent browsers you can't edit this text! ABC123
+  </textarea></td>
+  
+          <td>
+            <p></p>
+            <p>Something mysterious and invisibly hidden... <input type="hidden" name="top_secret" value="007"></p>
+          </td>
+        </tr>
+  
+        <tr>
+          <td colspan="2">File upload <input name="a_file" type="file" size="70"></td>
+        </tr>
+  
+        <tr>
+          <td>
+            <p>Please tick the <em>all</em> the HTML techniques you have used</p>
+  
+            <table>
+              <tbody><tr>
+                <td><input type="checkbox" name="html_use_basic" value="yes"> basic</td>
+  
+                <td><br></td>
+  
+                <td></td>
+  
+                <td><input type="checkbox" name="html_use_links" value="no_problem"> links</td>
+              </tr>
+  
+              <tr>
+                <td><input type="checkbox" name="html_use_lists" value="easy"> lists</td>
+  
+                <td><br></td>
+  
+                <td></td>
+  
+                <td><input type="checkbox" name="html_use_images" value="ok"> images</td>
+              </tr>
+  
+              <tr>
+                <td><input type="checkbox" name="html_use_maps" value="expert"> image maps</td>
+  
+                <td><br></td>
+  
+                <td></td>
+  
+                <td><input type="checkbox" name="html_use_tables" value="done_that"> tables</td>
+              </tr>
+  
+              <tr>
+                <td><input type="checkbox" name="html_use_windows" value="of_course"> windows</td>
+  
+                <td><br></td>
+  
+                <td></td>
+  
+                <td><input type="checkbox" name="html_use_frames" value="daily"> frames</td>
+              </tr>
+  
+              <tr>
+                <td><input type="checkbox" name="html_use_dyn" value="often">
+                strict XHTML</td>
+  
+                <td><br></td>
+  
+                <td></td>
+  
+                <td><input type="checkbox" name="html_use_CSS" value=""> CSS</td>
+              </tr>
+            </tbody></table>
+          </td>
+  
+          <td>
+            <p>Select the personal computer operating system you are <em>most</em> familiar
+            with:<br>
+            <input type="radio" name="op_sys" value="unix_linux"> Unix/Linux<br>
+            <input type="radio" name="op_sys" value="xp_lower"> 
+            Win XP or lower<br>
+            <input type="radio" name="op_sys" value="vista_higher"> Win Vista or higher<br>
+            <input type="radio" name="op_sys" value="mac"> Macintosh<br>
+            <input type="radio" name="op_sys" value="none"> None of the above</p>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>
+            <p>Please indicate the type of PC you currently own: <select name="pc_owned">
+  
+              <option value="basic">
+                basic
+              </option>
+  
+              <option value="internet">
+                internet ready
+              </option>
+  
+              <option value="high">
+                top specification
+              </option>
+  
+              <option value="none">
+                none
+              </option>
+            </select></p>
+          </td>
+  
+          <td>
+            <p>Please select <em>all</em> the items you expect to buy in the next 12 months:<br>
+            <select multiple="multiple" size="6" name="shopping_list">
+              <option value="" disabled="disabled" class="spacer">Systems</option>
+              <option value="netbook">netbook</option>
+              <option value="laptop">labtop</option>            
+              <option value="desktop">desktop PC</option>
+              <option value="gamer">gamer PC </option>
+  
+              <option value="" disabled="disabled" class="spacer">PC Upgrades</option>
+  
+              <option value="graphics">graphics card</option>
+              <option value="internal_HDD">internal hard drive </option>
+              <option value="proc_plus">processor upgrade</option>
+              <option value="ram">ram upgrade</option>
+  
+              <option value="" disabled="disabled" class="spacer">Peripherals</option>            
+              <option value="scan">scanner</option>
+              <option value="external_HDD">external hard drive</option>
+              <option value="printer">printer</option>
+              <option value="USBdrive">USB memory drive</option>
+              
+            </select></p>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Click as close as you can to where you live on the map below.<br>
+          <input type="image" src="uk.png"  name="british_isles" alt="Map of British Isles"></td>
+  
+          <td>
+            <p>Back in yee olden days before the invention of client side image maps with HTML, image
+            maps were processed server side. The <code>type="image"</code> form element sends the x,y
+            coodinate of the click on the image to the server.</p>
+  
+            <p>Now the <code>type="image"</code> form element is almost only ever used if you want an
+            image or graphic to act as a submit button (as an alternative to the standard buttons
+            below).</p>
+          </td>
+        </tr>
+  
+        <tr>
+          <td><input type="submit" name="submit_button"></td>
+  
+          <td><input type="reset" name="clear_button"></td>
+        </tr>
+      </tbody></table>
+    </form>
+  
+  
+  </body>
+</html>

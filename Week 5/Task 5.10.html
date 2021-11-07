@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    //document.write("<img src=\"harbour0.jpg\" onclick=click(bum)>");
+
+    
+
+    // Preload animation images
+    theImages = new Array()
+    for(i = 1; i < 9; i++) {
+    theImages[i] = new Image()
+    theImages[i].src = "harbour" + i + ".jpg"
+    }
+
+    
+
+    function click(bum) {
+        document.images[0].src = theImages[i].src
+        console.log(bum)
+     }
+    
+     
+</script>
+
+<body>
+    <img src="harbour0.jpg" onclick="click(this)">
+
+</body>
+</html>
+<!-- ALAN CODE -->
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<body>
+    <a href="javascript:void(0)" onclick="nextSlide()"><img src="https://alan-jack.duckdns.org/tasks/JS/Completed%20Tasks/20%20Task%205.10%20-%20Slide%20Show/harbourPhotosStockholm2007/harbour0.jpg" alt="" id="slide" usemap="#slide-show"></a>
+    <h3>File Name: </h3>
+    <p id="image-src">harbourPhotosStockholm2007/harbour0.jpg</p>
+    <map name="slide-show">
+        <area shape="rect" coords="0,0,162,435" href="javascript:void(0)" alt="" onclick="prevSlide()">
+        <area shape="rect" coords="163,0,163,435" href="javascript:void(0)" alt="" onclick="nextSlide()">
+    </map>
+    <script>
+        let imgArray = new Array(9);
+        let imgSrc = new Array(imgArray.length);
+        let paraEle = document.getElementById('image-src');
+        let counter = 0;
+
+        for(let i = 0; i<imgArray.length;i++){
+            imgArray[i] = new Image();
+            imgSrc[i] = `./harbourPhotosStockholm2007/harbour${i}.jpg`
+            imgArray[i].src = imgSrc[i];
+        }
+
+        function nextSlide(){
+            let img = document.getElementById('slide');
+            img.src = imgArray[counter++].src;
+            let text = img.src;
+            let index = text.indexOf('harbour');
+            text = text.slice(index);
+            paraEle.innerHTML = text;
+            if(counter > 8)
+            {
+                counter = 0
+            }
+        }
+
+        
+        function prevSlide(){
+            let img = document.getElementById('slide');
+            img.src = imgArray[counter--].src;
+            text = img.src;
+            index = text.indexOf('harbour');
+            text = text.slice(index);
+            paraEle.innerHTML = text;
+            if(counter <=0)
+            {
+                counter = 8;
+            }
+        }
+    </script>
+
+</body></html>

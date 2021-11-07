@@ -1,0 +1,34 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+  <title>isNaN example</title>
+</head>
+
+<body>
+  <h1>Number Validation - isNaN example</h1><script>
+//<![CDATA[
+
+   var num;
+   num=window.prompt("Please Enter A Number","");
+   if (isNaN(num) || isNaN(parseFloat(num))){
+      // isNaN(x) is TRUE if x isn't a number
+      // and FALSE if x is a number
+      document.write("<h2>" + num + " IS NOT a number</h2>");
+   } else {
+      document.write("<h2>" + num + " IS a number</h2>");
+   }
+
+
+//]]>
+</script>
+<p>
+Unfortunately you can "fool" the <code>isNaN</code> function if you supply a <code>null</code> value 
+(click on the "Cancel" button when prompted). It's also fooled if you click on the "OK"
+buttons without typing any input or typing in a few spaces. The function treats <code>null</code> , 
+empty values and strings made up of spaces as numbers!
+</p>
+</body>
+</html>

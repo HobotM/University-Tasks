@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       table{
+           border: 0;
+       }
+      
+      
+    </style>
+</head>
+<body>
+    <h1>My Form Page</h1>
+
+    <form action="http://tv-pi.duckdns.org/cgi-bin/feedback_3_2.py" method="get">
+
+        <fieldset><legend>Your Details</legend>
+            <input type="hidden" name="My_Form_Page" value="This is a Completed Form"> 
+
+            <table>
+                <tr>
+                    <td class="left" align="right">
+                        <label for="title">Title:</label> 
+                      
+                    </td>
+                    <td>
+                        <select size="1" name="personal_title" id="personal_title">
+                            <option value=""></option>
+                            <option value="Mr">Mr</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Miss">Miss</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                   <td class="left" align="right">
+                        <label for="Firstname">First Name:</label>
+                   </td>
+                   <td>
+                        <input type="text" name="Firstname" id="Firstname">
+                   </td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">
+                        <label for="Surname">Surname:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Surname" id="Surname">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">
+                        <label for="mail">What type of response would you prefer?</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="response" id="mail" value="mail" />Mail
+                        <input type="radio" name="response" id="phone" value="phone"/>Telephone
+                        <input type="radio" name="response" id="fax" value="fax"/>Fax
+                        <input type="radio" name="response" id="email" value="email" checked = "checked"/>Email
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">
+                        <label for="xhtml">I am interested in the following areas:</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="xhtml" id="xhtml" value="1" checked = "checked" />xhtml
+                        <input type="checkbox" name="css" id="css" value="1" checked = "checked"/>css
+                        <input type="checkbox" name="js" id="js" value="1" checked = "checked"/>js
+                        <input type="checkbox" name="flash" id="flash" value="1" checked = "checked"/>flash
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left" align="right">
+                        <label for="Comments">Comments:</label>
+                    </td>
+                    <td>
+                        <textarea name="customer_feedback" id="customer_feedback" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br><input type="submit" name="Submit_Button" value="Submit Details">
+        </fieldset>
+    </form>
+
+</body>
+</html>

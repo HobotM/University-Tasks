@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- THIS TASK CONTAINS TASKS FROM 5.2 TO 5.4 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container{
+            border: 2px;
+            border-style: solid;
+            border-radius: 20px;
+            border-color: black;
+            display: block;
+            padding: 20px;
+            margin: auto 5px 20px;
+            width: 20%;
+        }
+
+        div.container.a{
+            border-color: red;
+        }
+        div.container.b{
+            border-color: black;
+        }
+        div.container.c{
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container a">
+        <h3>Original Order</h3>
+            <ol>
+              <script>
+                var fruit = Array("apple","banana", "orange", "strawberry", "blueberry");
+                for (var i = 0; i <fruit.length ; i++){
+                    document.writeln("<li> Index " + i + " contains " + fruit[i] + "</li>");
+                    }
+               </script>
+            </ol>
+    </div>         
+    <div class="container b">
+        <h3>Alphabeticall Order</h3>
+            <ol>
+              <script>
+                    for (var i in fruit){
+                        document.writeln("<li> Index " + i + " contains " + fruit.sort()[i] + "</li>");
+                    }
+               </script>
+            </ol>
+    </div>    
+    <div class="container c">
+        <h3>Reverse Alphabeticall Order</h3>
+            <ol>
+              <script>
+                for (var i in fruit){
+                    document.writeln("<li> Index " + i + " contains " + fruit.reverse()[i] + "</li>");
+                }
+               </script>
+            </ol>
+    </div>   
+</body>
+</html>

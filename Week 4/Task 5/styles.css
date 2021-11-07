@@ -1,0 +1,55 @@
+body {  font-family: Georgia, "Times New Roman", Times, serif; 
+        color: #660033; 
+        background-color: #FFFF66
+    }
+
+h2 {  
+    text-decoration: underline
+}
+
+input {  
+    font-family: Georgia, "Times New Roman", Times, serif; 
+    color: #660033; 
+    background-color: #FFFFCC
+}
+
+input:focus { 
+    background-color: #CCFFCC
+}
+
+textarea {  
+    font-family: Georgia, "Times New Roman", Times, serif; 
+    color: #660033; 
+    background-color: #FFFFCC
+}
+
+textarea:focus { 
+    background-color: #CCFFCC
+}
+
+select {  
+    font-family: Georgia, "Times New Roman", Times, serif; 
+    color: #660033; 
+    background-color: #CCFFCC
+}
+option {  
+    font-family: Georgia, "Times New Roman", Times, serif; 
+    color: #660033; 
+    background-color: #CCFFCC
+}
+.spacer { 
+    background-image: none; 
+    font-weight: bold; 
+    text-decoration: underline 
+}
+
+td {
+    width: 50%;
+}
+table {
+    width: 100%;
+    
+}
+input {
+    margin-left: 0;
+}

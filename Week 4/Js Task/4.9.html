@@ -1,0 +1,41 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>JS nested for loops</h1>
+        <script>
+      //<![CDATA[ 
+      // start table with opening tag 
+      document.write("<table border='1'>"); 
+      
+      // top left hand cell on table is empty
+      document.write("<th>&nbsp;</th>"); 
+       // use top row to label columns with x
+      for (x=1; x<13; x++) {
+          document.write("<th>",x,"</th>")
+      }
+  
+          
+      for (y=1; y<13; y++) {
+              // start each row with open row tag and label with y
+              document.write("<tr><th>",y,"</th>"); 
+              // ON THE NEXT LINE, PUT LOOP NUMBERS (INDICES) AND THEIR PRODUCT WITHIN THE CELL
+              for (x=1; x<13; x=x+1) document.write("<td> "+ x + " * " + y + " = ","",y * x,"</td>"); // can use a comma separated list of things to print
+              // finish each row with closing row tag
+              document.write("</tr>");        
+      }
+      // finish table with closing tag 
+      document.write("</table>");     
+      //]]>
+      </script>
+      <!-- <table border="1"><tbody><tr><th>&nbsp;</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th></tr><tr><th>1</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>2</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>3</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>4</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>5</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>6</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>7</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>8</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>9</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>10</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>11</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><th>12</th><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>
+       -->
+      
+    </body>
+    </html>

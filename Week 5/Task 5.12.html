@@ -1,0 +1,41 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <h1>Task 5.9 - Animation</h1>
+
+    <img src="https://alan-jack.duckdns.org/tasks/JS/Completed%20Tasks/22%20Task%205.12%20-%20Animated%20Rollover/JavaScriptLogoImages/t9.gif" alt="js logo" id="test" onmouseover="running=window.setInterval('changeLogo();',125);" onmouseleave="stop();">
+    <!-- <a href="javascript:void(0)" class="btn btn-start" onclick="running=window.setInterval('animate();',125);">Start Animation</a>
+    <a href="javascript:void(0)" class="btn btn-stop" onclick="stop();">Stop Animation</a> -->
+    <script>
+        let imageArr = new Array(11);
+        let imageSrc = new Array(11);
+        let counter = 0;
+
+        for(let i = 0;i<imageArr.length;i++){
+            imageArr[i] = new Image();
+            imageSrc[i] = "./JavaScriptLogoImages/t"+i+".gif";
+            imageArr[i].src = imageSrc[i];
+        }
+
+        function changeLogo(){
+            let img = document.getElementById('test');
+            img.src = imageArr[counter++].src;
+
+            if(counter >10){
+                counter = 0;
+            }
+        }
+
+        function stop(){
+            clearInterval(running);
+        }
+    </script>
+
+</body>
+</html>

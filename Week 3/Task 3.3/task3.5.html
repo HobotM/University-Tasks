@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Another Form Page</title>
+<style>
+label
+{
+width: 10em;
+float: left;
+text-align: right;
+margin-right: 0.5em;
+display: block
+}
+.rightCol{
+margin-left: 10.5em;
+}
+
+</style>
+</head>
+<body>
+  <h1>Another Form Page</h1>
+  <form method="post" action="http://tv-pi.duckdns.org/cgi-bin/feedback_3_5.py" 
+  enctype="multipart/form-data" id="form1">
+  <fieldset>
+    <p><label for="pwd">Password:</label><input type="password" name="pwd" id="pwd" /></p>
+    <p><label for="been_there">Please select places you have visited:</label><select name="been_there" id="been_there" multiple="multiple" size="3">
+      <option value="ca">
+        Canada
+      </option>
+      <option value="fr">
+        France
+      </option>
+      <option value="de">
+        Germany
+      </option>
+      <option value="it">
+        Italy
+      </option>
+      <option value="jp">
+        Japan
+      </option>
+      <option value="ru">
+        Russia
+      </option>
+      <option value="uk">
+        United Kingdom
+      </option>
+      <option value="us">
+        United States
+      </option>
+    </select>
+    </p>
+    <p><label for="uploader">File selection</label><input type="file" name="uploader" id="uploader" style="width:80em;" />
+		<!-- styling width of form element seems less reliable than using the deprecated size attribute -->
+    </p>
+    <p >
+	<label for="reset">&nbsp;</label>
+	<input id="reset" type="reset" value="Clear Details" />
+    <!-- xhtml1-transitional.dtd doesn't like border="0" width="150" height="99" for image input below  -->
+    </p>
+    <p>
+	<label for="imgButton">&nbsp;</label>
+	<input id="imgButton"  type="image" name="send" src="send_icon.jpg" alt="Send Icon"/></p>
+  </fieldset>
+  </form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+body {
+    background-image: url(/images/css.gif);
+    background-color: #ffff99;
+    color: #9900ff;
+    
+} 
+
+dl dt {
+    font-weight: bold;
+}

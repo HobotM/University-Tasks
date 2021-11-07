@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Web Page containing JavaScript</title>
+<script type="text/javascript">
+
+
+var Card_Suit; 
+Card_Suit=window.prompt("Think of a card suit? What suit are you thinking of?","????"); 
+
+</script>
+</head>
+<body>
+  <h1 style="color: blue">Your Future In The Cards</h1>
+  
+<script type="text/javascript">
+//<![CDATA[
+switch(Card_Suit) { 
+	case "clubs": {document.write("<p style='color: black'>"); 
+		document.write("Beware of three legged dogs crossing your path</p>"); 
+	} 
+	break; 
+	case "spades": {document.write("<p style='color: black'>"); 
+		document.write("Wear brown with pink spots for luck</p>"); 
+	} 
+	break 
+	case "hearts": {document.write("<p style='color: red'>"); 
+		document.write("You are going to meet a stranger with two heads</p>"); 
+	} 
+	break; 
+	case "diamonds": {document.write("<p style='color: red'>"); 
+		document.write("Your lucky number for today is 13,254,297</p>"); 
+	} 
+	break; 
+	default: {document.write("<p style='color: green'>"); 
+		document.write("Sorry, your choice isn't recognised.</p>"); 
+	} 
+break; 
+} 
+//]]>
+</script>
+</body>
+</html>
