@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        th {
+            inset: 2px;
+        }
+        td {
+            inset: 2px;
+        }
+        table{
+            border: 5px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>My table page</h1>
+
+    <table >
+        <caption style="caption-side:bottom">My first table</caption>
+        <tr>
+            <th>Row1 Col1</th>
+            <th>Row1 Col2</th>
+            <th>Row1 Col3</th>
+            <th>Row1 Col4</th>
+            <th>Row1 Col5</th>
+        </tr>
+        <tr>
+            <td>Row2 Col1</td>
+            <td>Row2 Col2</td>
+            <td>Row2 Col3</td>
+            <td>Row2 Col4</td>
+            <td>Row2 Col5</td>
+        </tr>
+        <tr>
+            <td>Row3 Col1</td>
+            <td>Row3 Col2</td>
+            <td>Row3 Col3</td>
+            <td>Row3 Col4</td>
+            <td>Row3 Col5</td>
+        </tr>
+        <tr>
+            <td>Row4 Col1</td>
+            <td>Row4 Col2</td>
+            <td>Row4 Col3</td>
+            <td>Row4 Col4</td>
+            <td>Row4 Col5</td>
+        </tr>
+        <tr>
+            <td>Row5 Col1</td>
+            <td>Row5 Col2</td>
+            <td>Row5 Col3</td>
+            <td>Row5 Col4</td>
+            <td>Row5 Col5</td>
+        </tr>
+       
+    </table>
+    
+
+    <table >
+        <caption style="caption-side:bottom">My second table</caption>
+        <tr>
+            <th>Row1 Col1</th>
+            <th>Row1 Col2</th>
+            <th>Row1 Col3</th>
+            <th>Row1 Col4</th>
+            <th>Row1 Col5</th>
+        </tr>
+        <tr>
+            <td rowspan="4">Row2 Col1 <br> Row3 Col1 <br>Row4 Col1 <br>Row5 Col1</td>
+            <td colspan="4">Row2 Col2  Row2 Col3  Row2 Col4    Row2 Col5</td>
+            
+        </tr>
+        <tr>
+            <!-- <td>Row3 Col1</td> -->
+            <td>Row3 Col2</td>
+            <td>Row3 Col3</td>
+            <td>Row3 Col4</td>
+            <td>Row3 Col5</td>
+        </tr>
+        <tr>
+            <!-- <td>Row4 Col1</td> -->
+            <td>Row4 Col2</td>
+            <td>Row4 Col3</td>
+            <td colspan="2" rowspan="2">Row4 Col4 Row4 Col5 <br>Row5 Col4 Row5 Col5 </td>
+            
+        </tr>
+        <tr>
+            <!-- <td>Row5 Col1</td> -->
+            <td>Row5 Col2</td>
+            <td>Row5 Col3</td>
+            <!-- <td>Row5 Col4</td> -->
+            <!-- <td>Row5 Col5</td> -->
+        </tr>
+       
+    </table>
+    
+</body>
+</html>
