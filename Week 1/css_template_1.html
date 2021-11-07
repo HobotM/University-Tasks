@@ -1,0 +1,114 @@
+<html><head>
+    <meta charset="utf-8">
+      <title>Test document for CSS</title>
+    <style type="text/css">
+    div.hint {font-family: monospace; color: forestgreen}
+    h1, h2 {font-family: Helvetica, sans-serif}
+    h1 {color: green}
+    h2 {text-align: center; color: red}
+    p {text-indent: 2cm}
+    em {font-size: 150% }
+    a:link { color: red } unvisited link
+    a:visited { color: green } visited link
+    a:active { color: blue } active link
+    strong {text-transform: uppercase}
+    div.tarzan { border: solid thick black; background-color: #FFCCCC; padding: 2em}
+    img { margin: 2cm }
+    body {font-family: serif; background-color: #F0FFFF }
+    </style>
+    </head>
+    
+    <body>
+      <h1>Test document for internal/external CSS</h1>
+    <p>This file contains various HTML tags to define the structure the information. 
+    Use and experiment with CSS to define the appearance of the information. I've 
+    defined my own class of HTML &lt;div&gt; tag called "hint", you can use these 
+    hints to get you started. </p>
+    <div class="hint">
+        The text of hints looks like this.
+      </div>
+      <span>Transfer the hints (but try some modifications) to the style sheet and see what happens.</span>
+    
+      
+    <div class="hint"> body {font-family: serif; background-color: #F0FFFF } </div>
+      <hr>
+    
+      <h1>Level One Heading</h1><br>
+    
+      
+    <div class="hint"> h1, h2 {font-family: Helvetica, sans-serif;} </div>
+    
+    
+      
+    <div class="hint"> h1 {color: green} </div>
+      <hr>
+    
+      <h2>Level Two Heading</h2>
+    
+      
+    <div class="hint"> h2 {text-align: center; color: red} </div>
+      <hr>
+    <p>This is a bit about foxes and dogs is ordinary text enclosed within paragraph (&lt;p&gt;....&lt;/p&gt;) tags. The
+      quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped
+      over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The
+      quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped
+      over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The
+      quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped
+      over the lazy dog.</p>
+    
+      
+    <div class="hint"> p {text-indent: 2cm} </div>
+      <hr>
+     <p>The word <em>emphasis</em> has been <em>emphasised</em> too.</p>
+    
+      
+    <div class="hint"> em {font-size: 150% } </div>
+      <hr>
+      <p><a href="../http://www.uws.ac.uk/">Link text looks like this</a> and links to UWS.</p>
+    
+      
+    <div class="hint"> a:link { color: red } /* unvisited link (C or JavaScript programming type comment) */<br>
+      a:visited { color: green } /* visited link */<br>
+      a:active { color: blue } /* active link */</div>
+      <hr>
+      <strong>this text is typed entirely in lower case but is described as strong.</strong>
+    
+      
+    <div class="hint"> strong {text-transform: uppercase} </div>
+      <hr>
+    
+    
+        <span>This division starts about here.</span>
+    
+        
+    <p>You can add a box to something quite easily. For example, you can define 
+        your own special class of an XHTML tag (&lt;div&gt; in this case) and give it 
+        a class attribute ("tarzan" in this case). Put this (or a similar) style definition 
+        in your style sheet.</p>
+    
+        <div class="hint">
+          div.tarzan { border: solid thick black; background-color: #FFCCCC; padding: 2em}
+        </div>
+    
+        <p>To apply this style to a division in the &lt;BODY&gt; of your text, you need to give the opening tag some class.
+        You'll need to change the HTML to:</p>
+    
+        <div class="hint">
+          <pre>&lt;div class="tarzan"&gt;
+    ...
+    &lt;/div&gt;
+    </pre>
+        </div>
+    
+        <p>The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox
+        jumped over the lazy dog. The quick brown fox jumped over the lazy dog.</p>This division ends just about now.
+    
+      <hr>
+      <img src="/Images/butterfly.jpg" alt="Butterfly on flower"><br>
+    
+      
+    <div class="hint"> img { margin: 2cm } </div>
+      <hr>
+    
+    
+    </body></html>
