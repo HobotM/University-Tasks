@@ -38,10 +38,16 @@ fieldset {border: none }
 			},
 			messages: {
 				fullname: {
-					required: "Please enter a full name",
-					minlength: "Your username must consist of at least 2 characters"
+					required: "Please specify your name (at least 4 characters)",
+					minlength: "Your username must consist of at least 4 characters"
 				},
-				email: "Please enter a valid email address",
+				email: {
+                    required: "We need your email address to contact you",
+                    email: "Your email address must be in the format of name@domain.com"
+                },
+                phone: {
+                    required: "Please enter a uk phone number",
+                }
 			},
     });	
     $.validator.addMethod( "phoneUK", function( phone, element ) {
