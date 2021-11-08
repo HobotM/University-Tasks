@@ -18,10 +18,6 @@ p { clear: both; }
 em { font-weight: bold; padding-right: 1em; vertical-align: top; }
 fieldset {border: none } 
 </style>
-<!--
-If using this as a template, copy and paste from View Source.
-DO NOT use Save As which often does not give you the correct/original source code.
--->
 <script>
     $().ready(function() {
 		// validate signup form on keyup and submit
@@ -31,8 +27,6 @@ DO NOT use Save As which often does not give you the correct/original source cod
                 fullname: { 
                     required: true,
                   },
-                
-				
 				email: {
 					required: true,
 					email: true
@@ -40,24 +34,16 @@ DO NOT use Save As which often does not give you the correct/original source cod
 				phone: {
                     required: true,
                     phoneUK: true //or look at the additional-methods.js to see available phone validations
-                },
-				
+                },	
 			},
 			messages: {
 				fullname: {
 					required: "Please enter a full name",
 					minlength: "Your username must consist of at least 2 characters"
 				},
-				
-				
 				email: "Please enter a valid email address",
-				
 			},
-		
-
-       
-    });
-		
+    });	
     $.validator.addMethod( "phoneUK", function( phone, element ) {
         phone = phone.replace( /\(|\)|\s+|-/g, "" );
         return this.optional( element ) || phone.length > 9 &&
