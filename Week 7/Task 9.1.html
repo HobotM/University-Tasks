@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>jQuery plugin validation of simple contact details</title>
+	<script
+		src="http://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous"> 
+	</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
+<style type="text/css">
+* { font-family: Verdana; font-size: 96%; }
+label { width: 10em; float: left; }
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+p { clear: both; }
+.submit { margin-left: 12em; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top; }
+fieldset {border: none } 
+</style>
+<!--
+If using this as a template, copy and paste from View Source.
+DO NOT use Save As which often does not give you the correct/original source code.
+-->
+<script>
+    $().ready(function() {
+		// validate signup form on keyup and submit
+		$("#contactForm").validate({
+			rules: {
+				
+				fullname: {
+					required: true,
+					minlength: 2
+				},
+
+                
+				
+				email: {
+					required: true,
+					email: true
+				},
+				
+				
+			},
+			messages: {
+				username: {
+					required: "Please enter a username",
+					minlength: "Your username must consist of at least 2 characters"
+				},
+				
+				
+				email: "Please enter a valid email address",
+				agree: "Please accept our policy",
+				topic: "Please select at least 2 topics"
+			}
+		});
+
+		// propose username by combining first- and lastname
+		$("#fullname").focus(function() {
+			var firstname = $("#firstname").val();
+			var lastname = $("#lastname").val();
+			if (firstname && lastname && !this.value) {
+				this.value = firstname + "." + lastname;
+			}
+		});
+</script>
+
+</head>
+
+<body>
+  <h1>jQuery plugin validation of simple contact details</h1>
+
+  <form method="post" id="contactForm" action="http://tv-pi.duckdns.org/cgi-bin/contacts.py">
+    <fieldset>
+       <p>
+       <label for="fullname">Full name:</label>
+       <input type="text" name="fullname" id="fullname" size="40"/>
+       </p>
+       <p>
+       <label for="phone">Phone Number:</label>
+       <input type="text" name="phone" id="phone" size="40"/>
+       </p>
+       <p>
+       <label for="email">e-mail:</label>
+       <input type="email" name="email" id="email" size="40"/>
+       </p>
+       <p>
+       <input class="submit" type="submit" value="Register Contact Details" />
+       </p>
+    </fieldset>
+  </form>
+</body>
+</html>
