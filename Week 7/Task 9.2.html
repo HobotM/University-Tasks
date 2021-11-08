@@ -22,12 +22,13 @@
         $().ready(function(){
             $("#cssUploadForm").validate({
                rules: {
-                file:{
-                    required: true,
-                    extension: "css"
-                }
-               }
-            });
+              ///  file:{
+              ///      required: true,
+             ///     extension: "css"
+               file: {required: true, accept: "/css"}
+            }
+        })
+            
         });
       </script>
 
