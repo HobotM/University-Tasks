@@ -28,41 +28,42 @@ DO NOT use Save As which often does not give you the correct/original source cod
 		$("#contactForm").validate({
 			rules: {
 				
-				fullname: {
-					required: true,
-					minlength: 2
-				},
-
+                fullname: { 
+                    required: true,
+                  },
                 
 				
 				email: {
 					required: true,
 					email: true
 				},
-				
+				phone: {
+                    required: true,
+                    phoneUK: true //or look at the additional-methods.js to see available phone validations
+                },
 				
 			},
 			messages: {
-				username: {
-					required: "Please enter a username",
+				fullname: {
+					required: "Please enter a full name",
 					minlength: "Your username must consist of at least 2 characters"
 				},
 				
 				
 				email: "Please enter a valid email address",
-				agree: "Please accept our policy",
-				topic: "Please select at least 2 topics"
-			}
-		});
+				
+			},
+		
 
-		// propose username by combining first- and lastname
-		$("#fullname").focus(function() {
-			var firstname = $("#firstname").val();
-			var lastname = $("#lastname").val();
-			if (firstname && lastname && !this.value) {
-				this.value = firstname + "." + lastname;
-			}
-		});
+       
+    });
+		
+    $.validator.addMethod( "phoneUK", function( phone, element ) {
+        phone = phone.replace( /\(|\)|\s+|-/g, "" );
+        return this.optional( element ) || phone.length > 9 &&
+        phone.match( /^(?:(?:(?:00\s?|\+)44\s?|0)7(?:[1345789]\d{2}|624)\s?\d{3}\s?\d{3})$/ );
+    }, "Please specify a valid uk mobile number" );
+});
 </script>
 
 </head>
@@ -78,7 +79,7 @@ DO NOT use Save As which often does not give you the correct/original source cod
        </p>
        <p>
        <label for="phone">Phone Number:</label>
-       <input type="text" name="phone" id="phone" size="40"/>
+       <input type="text" name="phone" id="phone" size="40" placeholder="+44077066066068"/>
        </p>
        <p>
        <label for="email">e-mail:</label>
