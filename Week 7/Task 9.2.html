@@ -15,11 +15,22 @@
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/additional-methods.js"></script>
-      <script type="text/javascript">
-      
-          eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('H b=["\\g\\c\\c","\\L\\d\\a\\f\\c\\a\\e\\c\\a\\d\\a\\g\\i\\e\\f\\e\\Q\\s\\s\\e\\o\\h\\d\\a","\\P\\y\\a\\e\\o\\h\\d\\a\\e\\a\\O\\i\\a\\m\\c\\h\\k\\m\\e\\n\\t\\c\\i\\e\\D\\a\\e\\N\\g\\c\\c","\\x\\f\\d\\h\\l\\f\\i\\a","\\q\\g\\c\\c\\A\\B\\d\\k\\f\\l\\r\\k\\j\\n","\\x\\f\\d\\h\\l","\\g\\y\\f\\m\\E\\a","\\q\\o\\h\\d\\a","\\j\\a\\c\\a\\i\\r\\k\\j\\n","\\g\\d\\h\\g\\z","\\q\\g\\d\\a\\f\\j\\G\\t\\i\\i\\k\\m","\\j\\a\\f\\l\\I"];$(J)[b[K]](p(){$(b[4])[b[3]]({R:{w:{u:F,v:b[0]}},C:{w:{u:b[1],v:b[2]}}});$(b[7])[b[6]](p(){$(b[4])[b[5]]()});$(b[M])[b[9]](p(){$(b[4])[b[3]]()[b[8]]()})})',54,54,'||||||||||x65|_0x8b30|x73|x6C|x20|x61|x63|x69|x74|x72|x6F|x64|x6E|x6D|x66|function|x23|x46|x53|x75|required|accept|file|x76|x68|x6B|x55|x70|messages|x62|x67|true|x42|var|x79|document|11|x50|10|x2E|x78|x54|x43|rules'.split('|'),0,{}))
-      
+      <script type="text/javascript"> 
       </script>
+
+      <script>
+        $().ready(function(){
+            $("#cssUploadForm").validate({
+               rules: {
+                file:{
+                    required: true,
+                    extension: "css"
+                }
+               }
+            });
+        });
+      </script>
+
     </head>
     <body>
       <h1>
