@@ -21,17 +21,20 @@ $( document ).ready(function() {
 		$("title").html(data.city); // supplied in template
 		// YOUR WORK STARTS BELOW
 		// do jQuery (1 line?) setting level 1 header to city in JSON rather than Paris
-		
-		
+		$("h1").html(data.city);
+		console.log(data.coords);
 		// assemble string for src attribute needed by iframe (1 line of code?)
-
+        src_iframe ="https://www.bing.com/maps/embed?h=400&w=500&lvl=13&sty=s&src=SHELL&FORM=MBEDV8&cp=" + data.coords;
 		// The timeout below allows 0.1s delay for Bing map. This improves reliability.
 		window.setTimeout(function(){
 			// do jQuery to set source attribute of iframe (1 line?)
-		
-		},100);
+            $("iframe").prop("src",src_iframe);
+		},300);
 		// assemble string for href attribute needed by link (1 line of code?)
 		
+        $("#largeMapLink").attr("href", 'https://www.bing.com/maps?cp=${data.coords}&sty=r&lvl=13&FORM=MBEDLD');
+
+        
 		// do jQuery to set source attribute of iframe (1 line?)
 
 		// YOUR WORK ENDS ABOVE
