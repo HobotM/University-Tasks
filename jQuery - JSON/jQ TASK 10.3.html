@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Paris</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<!-- 
+DO ALL THE CHNAGES WITH JQUERY
+NO CHANGES TO THIS TEMPLATE FILE REQUIRED BEFORE THIS LINE
+--> 
+<script>
+// When using this as a template, copy and paste from View Source.
+// DO NOT trust Save As which often does not give you the correct and original source code.
+$( document ).ready(function() { 
+	// .ready(), .getJSON() , console.table() supplied in template
+	$.getJSON( "http://media.uws.ac.uk/~davison/citiesJSON/", function( data ) {
+		console.table(data); // hint: knowing what to do with F12 is an essential skill
+		$("title").html(data.city); // supplied in template
+		// YOUR WORK STARTS BELOW
+		// do jQuery (1 line?) setting level 1 header to city in JSON rather than Paris
+		
+		
+		// assemble string for src attribute needed by iframe (1 line of code?)
+
+		// The timeout below allows 0.1s delay for Bing map. This improves reliability.
+		window.setTimeout(function(){
+			// do jQuery to set source attribute of iframe (1 line?)
+		
+		},100);
+		// assemble string for href attribute needed by link (1 line of code?)
+		
+		// do jQuery to set source attribute of iframe (1 line?)
+
+		// YOUR WORK ENDS ABOVE
+	});
+});
+</script>
+<!--
+NO TESTING WITH W3C MARKUP VALIDATOR REQUIRED
+we are using bing generated code for iframe that is not W3C HTML5 valid
+
+NO marks for replacing Paris hard coded into HTML 
+with other hard code data as this does not respond 
+to the dynamic JSON data.
+
+NO CHANGES TO THIS TEMPLATE FILE AFTER THIS LINE 
+AS YOU CAN DO ALL THE CHANGES WITH JQUERY
+--> 
+</head>
+<body>
+<h1>Paris</h1>
+<div> 
+     <iframe width="500" height="400" frameborder="0" src="https://www.bing.com/maps/embed?h=400&w=500&lvl=13&sty=s&src=SHELL&FORM=MBEDV8&cp=48.8566~2.3522" scrolling="no">
+     </iframe>
+     <div style="white-space: nowrap; text-align: center; width: 500px; padding: 6px 0;">
+        <a id="largeMapLink" target="_blank" href="https://www.bing.com/maps?cp=48.8566~2.3522&sty=r&lvl=13&FORM=MBEDLD">View Larger Map</a> &nbsp; | &nbsp;
+    </div>
+</div>
+<!-- bing generated code for iframe is not W3C HTML5 valid -->
+</body>
+</html>
