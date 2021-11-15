@@ -11,7 +11,46 @@
 <script type="text/javascript">
 // you can use this as a template file just by deleting the next line of obfuscated jQuery
 $().ready(function(){
-    $("#loan_form").validate();
+    $("#loan_form").validate(
+
+    {
+        onchange: true,
+        rules: {
+            amount: {
+                required: true,
+                range: [500, 10000]
+            },
+            term: {
+                required: true,
+                range: [1, 40]
+            },
+            interest: {
+                required: true,
+                range: [0.1, 50]
+            }
+        },
+        messages: {
+            amount: {
+                required: " Amount borrowed must be a number.",
+                range: " Loan amount must be between £500 to £10,000"
+            },
+            term: {
+                required: " Loan term in years required.",
+                range: " Loan duration from 1 to 40 years"
+            },
+            interest: {
+                required: " Annual interest rate required.",
+                range: " Annual interest rate from from 0.1 to 50 (percent)."
+            }
+        }
+    }
+
+
+
+
+  );
+
+
     $("#monthly_payment").val("-.--");
       $("#loan_form").on("change" ,function(){
       
