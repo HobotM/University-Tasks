@@ -1,0 +1,116 @@
+
+<!DOCTYPE html><html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Web Page containing jQuery</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+    <script>
+    $( document ).ready(function() {
+        $.getJSON( "http://media.uws.ac.uk/~davison/pizza/pizza.php", function( data ) {
+            console.table(data);
+            $.each( data.bases, function( i, item ) {
+                console.table(item);
+                $("#bases").append($("<input>").prop("type","radio").prop("name","size").prop("value",item.size).attr("data-price",item.price));
+                $("#bases").append(item.text+"&nbsp;&pound;"+item.price.toFixed(2));
+                $("#bases").append($("<br>"));
+            });
+            $("#bases input:first").prop("checked","checked");
+            // you don't need to do anything before this line
+            $.each( data.toppings, function( i, item ) {
+                console.table(item);
+                $("#toppings").append($("<input>").prop("type","checkbox").prop("name","size").prop("value",item.text).attr("data-price",item.price));
+                $("#toppings").append(item.text+"&nbsp;&pound;"+item.price.toFixed(2));
+                $("#toppings").append($("<br>"));
+            });
+            $("#toppings input:first").prop("checked","checked");
+
+            menu = {
+    bases: [
+        {
+            size: 9,
+            text: "small (1 person)",
+            price: 2
+        },
+        {
+            size: 12,
+            text: "medium (1-2 persons)",
+            price: 3.5
+        },
+        {
+            size: 15,
+            text: "large (1-2 persons)",
+            price: 4.5
+        }
+    ],
+    toppings: [
+        {
+            text: "cheese",
+            price: 0
+        },
+        {
+            text: "tomato",
+            price: 0
+        },
+        {
+            text: "ham",
+            price: 0.75
+        },
+        {
+            text: "salami",
+            price: 0.75
+        },
+        {
+            text: "olives",
+            price: 0.5
+        },
+        {
+            text: "peppers",
+            price: 0.4
+        },
+        {
+            text: "onions",
+            price: 0.3
+        }
+    ]
+};
+            
+            // you don't need to do anything after this line
+            $("#order").on("change", function(event) {
+                console.log(event.target);
+                var tot = 0;
+                $.each($("input:checked"), function (i, item) {
+                    console.log(item.dataset.price);
+                    tot = tot + parseFloat(item.dataset.price);
+                });	
+                $("#cost").prop("value", tot.toFixed(2));
+                console.log("total",tot);
+            });
+            $("#order").triggerHandler("change");		
+        });
+    });
+    
+    </script>
+    </head>
+    <body>
+    <h1>Pizza Selector</h1>
+    <form id="order" action="http://tv-pi.duckdns.org/cgi-bin/pizza.py" method="post">
+        <fieldset>
+            <legend>Please design your pizza!</legend>
+            <fieldset id="bases">
+                <legend>How hungry are you? Please select base size.</legend>
+            </fieldset>
+            &nbsp;
+            <fieldset id="toppings">
+                <legend>What do you like? Please select toppings.</legend>
+            </fieldset>
+            &nbsp;
+            <fieldset><label for="cost">This pizza will cost &pound;</label>
+            <input id="cost" name="cost" type="text" value="-.--" /><br />
+            <input id="button" type="submit" value="Place Order" />
+        </fieldset>
+    </form>
+    </body>
+    </html>
