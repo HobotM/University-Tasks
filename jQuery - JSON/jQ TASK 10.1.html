@@ -21,12 +21,12 @@
             // you don't need to do anything before this line
             $.each( data.toppings, function( i, item ) {
                 console.table(item);
-                $("#toppings").append($("<input>").prop("type","checkbox").prop("name","size").prop("value",item.text).attr("data-price",item.price));
+                $("#toppings").append($("<input>").prop("type","checkbox").prop("name","toppings").prop("value",item.text).attr("data-price",item.price));
                 $("#toppings").append(item.text+"&nbsp;&pound;"+item.price.toFixed(2));
                 $("#toppings").append($("<br>"));
             });
-            $("#toppings input:first").prop("checked","checked");
-
+            $("#toppings input[data-price=0]").prop("checked","checked").next();
+           
             menu = {
                 bases: [
                     {
