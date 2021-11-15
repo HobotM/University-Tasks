@@ -1,0 +1,50 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<title>Monthly Repayment Loan - unvalidated inputs</title>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+
+
+<script type="text/javascript">
+// you can use this as a template file just by deleting the next line of obfuscated jQuery
+$().ready(function(){
+    $("#loan_form").validate();
+   
+
+      $("#payment").click(function(){
+        var interest=$("#interest").val(); // copy value from form element to local variable using jQ .val() method
+        var capital=$("#amount").val();  // copy value from form element to local variable using jQ .val() method
+        var term=$("#term").val();     // copy value from form element to local variable using jQ .val() method
+        var monthly_interest=interest/1200.0;
+        var monthly=capital*monthly_interest;
+        monthly=monthly/(1.0-1.0/Math.pow(1.0+monthly_interest,term*12.0));
+        $("#monthly_payment").val(monthly); // output local variable to value of form element again using jQ .val() method
+
+
+    });
+});
+
+</script>
+
+</head>
+
+<body>
+<h2>Monthly Repayment Loan Calculator - unvalidated inputs.</h2>
+<form name="loan_form" id="loan_form" action="#">
+<table> <!-- FORM elements in a table (3 columns) to align neatly -->
+<tr><td></td><td colspan="2">Enter amount you wish to borrow</td></tr>
+<tr><td>&pound;</td><td><input type="text" name="amount" id="amount" value=""/></td><td></td></tr>
+<tr><td></td><td colspan="2">Enter term</td></tr>
+<tr><td></td><td><input type="text" name="term" id="term" value=""/></td><td>years</td></tr>
+<tr><td></td><td colspan="2">Enter annual interest rate</td></tr>
+<tr><td></td><td><input type="text" name="interest" id="interest" value=""/></td><td>%</td></tr>
+<tr><td></td><td colspan="2">The monthly payment is</td></tr>
+<tr><td>&pound;</td><td><output name="monthly_payment" id="monthly_payment"></output></td>
+<td><input type="button" value="Calculate" id="payment"/></td></tr>
+</table> 
+</form>
+</body>
+</html>
