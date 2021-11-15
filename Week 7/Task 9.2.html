@@ -34,8 +34,16 @@
             }
     
         });
-    });
 
+        $("#file").change(function(){
+          $("#cssUploadForm").valid(); 
+        });
+
+        $("#clearButton").click(function(){ 
+          validator.resetForm("#messages");
+
+        });
+    });
       </script>
 
     </head>
