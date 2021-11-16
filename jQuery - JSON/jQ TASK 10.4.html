@@ -1,0 +1,50 @@
+<!DOCTYPE html><html>
+<head>
+<meta charset="utf-8" />
+<title>Country Data</title>
+<style>
+table, th, td {
+	border: 1px solid black;
+}
+caption {
+	font-size: 300%	
+}
+</style>
+</head>
+<body>
+<table>
+<caption></caption>
+<tr><td>Capital</td><td id="city"></td></tr>
+<tr><td>Language(s)</td><td id="languages"></td></tr>
+<tr><td>National Dish</td><td id="dish"></td></tr>
+<tr><td>Flag</td><td id="flag"></td></tr>
+</table>
+<img><!-- RETAIN empty image tag here for debugging flag display selector -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+$( document ).ready(function() {
+	$.getJSON( "http://media.uws.ac.uk/~davison/country2020.php", function( data ) {
+		console.table(data);
+		// code below above line was supplied, no changes necessary BEFORE this line
+		// YOUR WORK STARTS HERE
+		$("caption").html(data.country);
+		$("#city").html(data.city);
+		$("#languages").html(data.languages);
+        $("#dish").html(data.dish);
+        $("#flag").attr("img", data.flag_base64, "width: 200px;");
+        console.log(data.flag_base64);
+        
+		
+		
+		
+		// YOUR WORK ENDS HERE
+		// code below this line was supplied, no changes necessary AFTER this line
+	});
+});
+</script>
+<!-- 
+NO HTML VALIDATION REQUIRED
+25 marks total
+-->
+</body>
+</html>
