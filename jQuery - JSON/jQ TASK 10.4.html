@@ -21,6 +21,7 @@ caption {
 </table>
 <img><!-- RETAIN empty image tag here for debugging flag display selector -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <script>
 $( document ).ready(function() {
 	$.getJSON( "http://media.uws.ac.uk/~davison/country2020.php", function( data ) {
@@ -29,9 +30,11 @@ $( document ).ready(function() {
 		// YOUR WORK STARTS HERE
 		$("caption").html(data.country);
 		$("#city").html(data.city);
-		$("#languages").html(data.languages);
+		if (Array.isArray(data.languages)) data.languages = data.languages.join(", ");
+		$("#languages").text(data.languages); 
         $("#dish").html(data.dish);
-        $("#flag").attr("img", data.flag_base64, "width: 200px;");
+		$("#flag").html("<img>");
+		$("#flag img").attr("src", data.flag_base64).attr("style","width: 200px;");
         console.log(data.flag_base64);
         
 		
@@ -40,6 +43,9 @@ $( document ).ready(function() {
 		// YOUR WORK ENDS HERE
 		// code below this line was supplied, no changes necessary AFTER this line
 	});
+
+
+
 });
 </script>
 <!-- 
