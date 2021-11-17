@@ -11,24 +11,21 @@
     <script type="text/javascript">
         $( document ).ready(function(){
             var dice = new Array();
-            for (var i=0; i<7; i++) {
+            for (var i=1; i<7; i++) {
                 dice[i] = new Image(); // make each element of the array an Image object
                 dice[i].src ="./die"+i+".gif";// preload .gifs 0-10 into logos[0] to logos[10]
             }
             var r = 1
-            $("#empty").prepend($("<img>").attr("src",dice[j].src));
+            $("#empty").prepend($("<img>").attr("src",dice[r].src));
             console.log("DOM loaded into jQ");
             var change = window.click(function(){
-
                 var r = Math.random(); // do not change this line
                 r=r*6.0;               // do not change this line
                 r=Math.ceil(r);        // do not change this line
                 console.log(r);
                 console.log(r, dice[r].src);
-                $("#empty").attr("src",dice[j]);
-            });
-         
-            
+                $("#empty").attr("src",dice[r]);
+            });           
         });
         
     </script>
