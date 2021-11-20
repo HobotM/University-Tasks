@@ -11,25 +11,30 @@
     <script type="text/javascript">
         $( document ).ready(function(){
             var dice = new Array();
-            for (var i=1; i<7; i++) {
+            for (var i=1; i<6; i++) {
                 dice[i] = new Image(); // make each element of the array an Image object
                 dice[i].src ="./die"+i+".gif";// preload .gifs 0-10 into logos[0] to logos[10]
             }
-            var r = 1
-            $("#empty").prepend($("<img>").attr("src",dice[r].src));
-            console.log("DOM loaded into jQ");
-            var change = window.click(function(){
-                var r = Math.random(); // do not change this line
-                r=r*6.0;               // do not change this line
-                r=Math.ceil(r);        // do not change this line
-                console.log(r);
-                console.log(r, dice[r].src);
-                $("#empty").attr("src",dice[r]);
-            });           
+
+            var i = 1
+            $("#empty").append($("<img>").attr("src",dice[i].src));
+            $("#empty img").click( function(){
+                for (var t=300;t<=1500; t=t+300) {
+                    window.setTimeout( function() {
+                        var r = Math.random(); // do not change this line
+                        r=r*6.0;               // do not change this line
+                        r=Math.ceil(r);        // do not change this line
+                        console.log(t,r);      // sometimes useful for debugging, do not change this line
+                        $("#empty img").attr("src",dice[r].src);
+                    }, t);	
+                }
+            });
+            $( "#empty img" ).triggerHandler( "click" );
         });
-        
     </script>
 
+
+ 
 
     </head>
     <body>
