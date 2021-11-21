@@ -1,0 +1,66 @@
+
+<!DOCTYPE html><html>
+    <head>
+    <meta charset="utf-8" />
+    <title>Pizza - jQuery, JSON and Select Menus</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+    <script>
+    $( document ).ready(function() {
+        $.getJSON( "http://media.uws.ac.uk/~davison/pizza/pizza.php", function( data ) {
+            console.log(data);
+            $.each( data.bases, function( i, item ) {
+                console.log(item);
+                $("#bases").append($("<option>").prop("value",item.size).attr("data-price",item.price).html(item.text+" &nbsp; &pound;"+item.price.toFixed(2)));
+            });
+            $("#bases option:first").prop("selected","selected");
+            $.each( data.toppings, function( i, item ) {
+                console.log(item);
+                $("#toppings").append($("<option>").prop("value",item.text).attr("data-price",item.price).html(item.text+" &nbsp; &pound;"+item.price.toFixed(2)));
+            });
+            $("#toppings option[data-price='0']").prop("selected","selected");
+            $("#order").on("change", function(event) {
+                console.log(event.target);
+                var tot = 0;
+                $.each($("option:selected"), function (i, item) {
+                    console.log(item.dataset.price);
+                    tot = tot + parseFloat(item.dataset.price);
+                });	
+                $("#cost").prop("value", tot.toFixed(2));
+                console.log("total",tot);
+            });
+            $("#order").triggerHandler("change");		
+        });
+    });
+    
+    </script>
+    </head>
+    <body>
+    <h1>Pizza - jQuery, JSON and Select Menus</h1>
+    <form id="order" action="http://tv-pi.duckdns.org/cgi-bin/pizza.py" method="post">
+        <fieldset>
+            <legend>Please design your pizza!</legend>
+            <fieldset>
+                <legend>How hungry are you? Please select base size.</legend>
+                <select id="bases" name="size" size="3">
+    
+                </select>
+            </fieldset>
+            &nbsp;
+            <fieldset>
+                <legend>What do you like? Please select toppings.</legend>
+                    <select id="toppings" name="toppings" size="7" multiple="multiple">
+    
+                    </select>
+            </fieldset>
+            &nbsp;
+            <fieldset><label for="cost">This pizza will cost &pound;</label>
+            <input id="cost" name="cost" type="text" value="-.--" /><br />
+            <input id="button" type="submit" value="Place Order" />
+            </fieldset>
+        </fieldset>
+    </form>
+    </body>
+    </html>
