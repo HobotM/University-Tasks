@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+    <title>
+      Munro Summit Maps from Bing
+    </title>
+<style type="text/css">
+fieldset {
+	display: inline;
+	text-align: center
+}
+#errorSpan {
+	color: red;
+	font-weight: bold;
+}
+</style>
+<!--
+When using this as a template, copy and paste from View Source.
+DO NOT use Save As which often does not give you the correct/original source code.
+-->
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script>
+// keep this jQuery form validation which has been obfuscated down to a single line
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('z a=["\\n\\7\\d\\d\\c\\d\\F\\b\\8\\f","\\8\\b\\b\\7\\f\\k\\E\\c","\\u\\g\\7\\8\\j\\7\\9\\j\\7\\g\\7\\w\\e\\9\\i\\8\\b\\9\\e\\p\\b\\7\\o\\9","\\u\\g\\7\\8\\j\\7\\9\\j\\7\\g\\7\\w\\e\\9\\8\\9\\i\\c\\m\\f\\e\\8\\l\\f\\9\\e\\c\\b\\o\\9","\\y\\8\\g\\l\\k\\8\\e\\7","\\n\\i\\m\\f\\d\\c\\A\\8\\b\\D\\c\\d\\i","\\d\\7\\8\\k\\p"];$()[a[6]](t(){$(a[5])[a[4]]({C:t(q,B){q[a[1]]($(a[0]))},G:{r:{h:s},v:{h:s}},x:{r:{h:a[2]},v:{h:a[3]}}})})',43,43,'|||||||x65|x61|x20|_0x62bf|x70|x6F|x72|x74|x6E|x6C|required|x6D|x73|x64|x69|x75|x23|x2E|x79|_0xe42ax1|lvl|true|function|x50|cp|x63|messages|x76|var|x4D|_0xe42ax2|errorPlacement|x46|x54|x53|rules'.split('|'),0,{}))
+// DO NOT DO ANY JAVASCRIPT TO FIX THIS FILE!
+// DO NOT DO ANY JQUERY TO FIX THIS FILE!
+</script>
+  </head>
+  <body>
+  <!-- 
+  FIX THIS FILE BY REMOVING A SINGLE CHARACTER FROM THE FOLLOWING FORM.
+  ASK YOURSELF HOW FORMS WORK AND HOW JQUERY VALIDATION WORKS TO FIX THE PROBLEM.
+  LOOK AT THE URL IN BING TO SEE THE FAULT.
+  -->
+    <form action="http://www.bing.com/maps/default.aspx" method="get" id="munroMapForm">
+      <fieldset>
+        <legend>Munro Summit Maps from Bing (approximate locations)</legend>
+        <fieldset>
+          <legend>Map Style</legend> 
+					<input type="radio" name="lvl" value="13" id="lvl13" checked="checked"/>
+					<label for="lvl13">1:50000 (zoomed in)</label>
+					<input type="radio" name="lvl" value="12" id="lvl12"/>
+					<label for="lvl12">1:50000</label>
+					<input type="radio" name="lvl" value="10" id="lvl10"/>
+					<label for="lvl10">Road Atlas</label>
+        </fieldset>
+				
+				<input type="hidden" name="sty" value="s" id="sty" />
+        <!-- sty=s (os map) or sty=c (roadmap) but defautls to raod map for lvl=10 -->
+        <br/>
+        <fieldset>
+		  <select name="cp" id="cp">
+            <option value=''>
+              Select a mountain (organised by height).
+            </option>
+			<option value='56.79673929192055~-5.002707036835279'>
+              Ben Nevis 1344m NN166712
+            </option>
+            <option value='57.07065218738893~-3.6668500627734333'>
+              Ben Macdui 1309m NN989989
+            </option>
+            <option value='57.078828600039905~-3.7266201854779792'>
+              Braeriach 1296m NN953999
+            </option>
+            <option value='57.05480820297863~-3.709014577053071'>
+              Cairn Toul 1291m NN963972
+            </option>
+            <option value='57.05819701648269~-3.724012972425179'>
+              Sgor an Lochain Uaine 1258m NN954976
+            </option>
+            <option value='57.1168007863169~-3.6424943210193477'>
+              Cairn Gorm 1245m NJ005040
+            </option>
+            <option value='56.800641586316544~-4.952227345481746'>
+              Aonach Beag 1234m NN197715
+            </option>
+            <option value='56.81304815876416~-4.959759467800055'>
+              Aonach Mor 1221m NN193729
+            </option>
+            <option value='56.80524632713731~-4.985362448564116'>
+              Carn Mor Dearg 1220m NN177721
+            </option>
+            <option value='56.54530880860324~-4.21960829492258'>
+              Ben Lawers 1214m NN635414
+            </option>
+            <option value='57.08806431003065~-3.4976333487721107'>
+              Beinn a'Bhuird North Top 1197m NJ092006
+            </option>
+            <option value='57.288438838606496~-5.11406131563357'>
+              Carn Eige [Carn Eighe] 1183m NH123262
+            </option>
+            <option value='57.09655238256664~-3.610232326490749'>
+              Beinn Mheadhoin 1182m NJ024017
+            </option>
+            <option value='57.28024203014174~-5.118347995353265'>
+              Mam Sodhail 1181m NH120253
+            </option>
+            <option value='56.82375216137715~-4.847484625601203'>
+              Stob Choire Claurigh 1177m NN262738
+            </option>
+            <option value='56.38638194599225~-4.5392696505572285'>
+              Ben More 1174m NN432244
+            </option>
+            <option value='57.09959420004463~-3.433711638243563'>
+              Ben Avon - Leabaidh an Daimh Bhuidhe 1171m NJ131018
+            </option>
+            <option value='56.37118833372713~-4.535019169832504'>
+              Stob Binnein 1165m NN434227
+            </option>
+            <option value='57.009704012548156~-3.72176842456966'>
+              Beinn Bhrotain 1157m NN954922
+            </option>
+            <option value='57.06317531081796~-3.620332209648698'>
+              Derry Cairngorm 1155m NO017980
+            </option>
+            <option value='56.960552431786915~-3.244155458780441'>
+              Lochnagar - Cac Carn Beag 1155m NO243861
+            </option>
+            <option value='57.25518416462753~-5.22072866231979'>
+              Sgurr nan Ceathreamhnan 1151m NH057228
+            </option>
+            <option value='56.643302168754545~-5.028022013681442'>
+              Bidean nam Bian 1150m NN143542
+            </option>
+            <option value='57.36978553099349~-5.059394383255836'>
+              Sgurr na Lapaich 1150m NH160351
+            </option>
+            <option value='56.81395418947587~-4.46325044004488'>
+              Ben Alder 1148m NN496718
+            </option>
+            <option value='56.83820645641037~-4.509118826310684'>
+              Geal-Charn 1132m NN469746
+            </option>
+            <option value='56.397639448403716~-4.809089845472496'>
+              Ben Lui 1130m NN266263
+            </option>
+            <option value='56.75456090252961~-4.924062149611727'>
+              Binnein Mor 1130m NN212663
+            </option>
+            <option value='57.36240789283368~-5.1036946005701'>
+              An Riabhachan 1129m NH133344
+            </option>
+            <option value='56.84035441044943~-3.6861123319759037'>
+              Beinn a'Ghlo - Carn nan Gabhar 1129m NN971733
+            </option>
+            <option value='56.952279629175~-4.6006701489602735'>
+              Creag Meagaidh 1128m NN418875
+            </option>
+            <option value='56.42678912490037~-5.130834834452503'>
+              Ben Cruachan 1126m NN069304
+            </option>
+            <option value='57.184977280769~-5.1533551049440405'>
+              A'Chralaig 1120m NH094148
+            </option>
+            <option value='56.560687773712395~-4.213998374993542'>
+              An Stuc 1118m NN639431
+            </option>
+            <option value='56.56532146653115~-4.206129856013451'>
+              Meall Garbh 1118m NN644436
+            </option>
+            <option value='57.068661814337055~-3.8102809819786323'>
+              Sgor Gaoith 1118m NN902989
+            </option>
+            <option value='56.8333218995398~-4.528467444367482'>
+              Aonach Beag 1116m NN457741
+            </option>
+            <option value='56.8112221468232~-4.884227080841115'>
+              Stob Coire an Laoigh 1116m NN239725
+            </option>
+            <option value='56.818268693314565~-4.771668832315698'>
+              Stob Coire Easain 1115m NN308730
+            </option>
+            <option value='57.02729914924141~-3.7489471711910194'>
+              Monadh Mor 1113m NN938942
+            </option>
+            <option value='57.299972409568646~-5.046948673469099'>
+              Tom a'Choinich 1112m NH164273
+            </option>
+            <option value='56.9458998634943~-3.271616798494088'>
+              Carn a'Choire Bhoidheach 1110m NO226845
+            </option>
+            <option value='57.70074461344598~-5.015074453023075'>
+              Sgurr Mor 1110m NH203718
+            </option>
+            <option value='57.177446735696066~-5.094781006674006'>
+              Sgurr nan Conbhairean 1109m NH129138
+            </option>
+            <option value='56.61242471249786~-4.851111267212339'>
+              Meall a'Bhuiridh 1108m NN250503
+            </option>
+            <option value='56.82394338079773~-4.758973433179676'>
+              Stob a'Choire Mheadhoin 1105m NN316736
+            </option>
+            <option value='56.53603929419547~-4.235331894320621'>
+              Beinn Ghlas 1103m NN625404
+            </option>
+            <option value='56.82587522139451~-4.541079866332479'>
+              Beinn Eibhinn 1102m NN449733
+            </option>
+            <option value='57.20565075454713~-5.153462616625045'>
+              Mullach Fraoch-choire 1102m NH095171
+            </option>
+            <option value='56.6146674639567~-4.87084407206366'>
+              Creise 1100m NN238506
+            </option>
+            <option value='56.756285295799835~-5.002748457936216'>
+              Sgurr a'Mhaim 1099m NN164667
+            </option>
+            <option value='56.80089625651549~-4.903094504825231'>
+              Sgurr Choinnich Mor 1094m NN227714
+            </option>
+            <option value='57.69729058054998~-5.04668483119349'>
+              Sgurr nan Clach Geala 1093m NH184715
+            </option>
+            <option value='57.13824163756865~-3.58229384313678'>
+              Bynack More 1090m NJ042063
+            </option>
+            <option value='56.568601245582244~-4.880377574075521'>
+              Stob Ghabhar 1090m NN230455
+            </option>
+            <option value='56.86968793730737~-4.507945543365217'>
+              Beinn a'Chlachair 1087m NN471781
+            </option>
+            <option value='57.786381671716654~-4.927972739035067'>
+              Beinn Dearg 1084m NH259811
+            </option>
+            <option value='56.666927498584755~-4.099442747795396'>
+              Schiehallion 1083m NN713547
+            </option>
+            <option value='57.44451808728524~-4.902252651582884'>
+              Sgurr a'Choire Ghlais 1083m NH258430
+            </option>
+            <option value='57.093400404637656~-3.5754308410464284'>
+              Beinn a'Chaorainn 1082m NJ045013
+            </option>
+            <option value='56.56030935054545~-4.646955878226653'>
+              Beinn a'Chreachain 1081m NN373440
+            </option>
+            <option value='56.51051499971255~-4.578454856701837'>
+              Beinn Heasgarnich 1078m NN413383
+            </option>
+            <option value='56.53940566661099~-5.049007020289078'>
+              Ben Starav 1078m NN125427
+            </option>
+            <option value='56.50297895342453~-4.720977391613286'>
+              Beinn Dorain 1076m NN325378
+            </option>
+            <option value='56.63835350560972~-5.009679612255086'>
+              Stob Coire Sgreamhach 1072m NN154536
+            </option>
+            <option value='56.83168934039~-3.7283422415069896'>
+              Braigh Coire Chruinn-bhalgain 1070m NN945724
+            </option>
+            <option value='57.35028012236235~-5.157548941099385'>
+              An Socach 1069m NH100332
+            </option>
+            <option value='56.54113269048442~-4.2519004455962985'>
+              Meall Corranaich 1069m NN615410
+            </option>
+            <option value='56.87302135161991~-3.3659547003342696'>
+              Glas Maol 1068m NO167765
+            </option>
+            <option value='57.196156948769804~-5.346419438856335'>
+              Sgurr Fhuaran 1067m NG978166
+            </option>
+            <option value='56.89399936092424~-3.3371673395237287'>
+              Cairn of Claise 1064m NO185788
+            </option>
+            <option value='57.807303965450544~-5.249624735654465'>
+              An Teallach - Bidein a'Ghlas Thuill 1062m NH069843
+            </option>
+            <option value='57.80081018494885~-5.257459263961796'>
+              An Teallach - Sgurr Fiona 1060m NH064836
+            </option>
+            <option value='56.74434492907535~-4.937991653529125'>
+              Na Gruagaichean 1056m NN203652
+            </option>
+            <option value='57.56432929083286~-5.462135609404922'>
+              Liathach - Spidean a'Choire Leith 1055m NG929579
+            </option>
+            <option value='56.964288038635445~-4.585053017914719'>
+              Stob Poite Coire Ardair 1054m NN428888
+            </option>
+            <option value='57.309242536499674~-4.997884060609712'>
+              Toll Creagach 1054m NH194282
+            </option>
+            <option value='57.45288990001545~-5.188075700613974'>
+              Sgurr a'Chaorachain 1053m NH087447
+            </option>
+            <option value='56.928738237621964~-4.651634844721452'>
+              Beinn a'Chaorainn 1052m NN386850
+            </option>
+            <option value='56.86630532425017~-3.556024606844359'>
+              Glas Tulaichean 1051m NO051760
+            </option>
+            <option value='56.89769134150002~-4.455622739718946'>
+              Geal Charn 1049m NN504811
+            </option>
+            <option value='57.44991075775568~-4.941029932207443'>
+              Sgurr Fhuar-thuill 1049m NH235437
+            </option>
+            <option value='56.94379914980129~-3.301137259402016'>
+              Carn an t-Sagairt Mor 1047m NO208843
+            </option>
+            <option value='56.490021758024945~-4.612809516006465'>
+              Creag Mhor 1047m NN391361
+            </option>
+            <option value='57.678969922197425~-4.577030890615589'>
+              Ben Wyvis - Glas Leathad Mor 1046m NH463683
+            </option>
+            <option value='56.830598949418075~-4.659447273872111'>
+              Chno Dearg 1046m NN377741
+            </option>
+            <option value='56.356890267073354~-4.574547679129259'>
+              Cruach Ardrain 1046m NN409212
+            </option>
+            <option value='56.89492191448505~-3.567065832214798'>
+              Beinn Iutharn Mhor 1045m NO045792
+            </option>
+            <option value='56.52228404932579~-4.299562987348641'>
+              Meall nan Tarmachan 1044m NN585390
+            </option>
+            <option value='56.555495943126935~-4.978676701489966'>
+              Stob Coir'an Albannaich 1044m NN169443
+            </option>
+            <option value='56.63469627506896~-4.144945200789556'>
+              Carn Mairg 1041m NN684512
+            </option>
+            <option value='57.01338960722136~-5.4552240896527255'>
+              Sgurr na Ciche 1040m NM902966
+            </option>
+            <option value='56.526379464612525~-4.415275003966669'>
+              Meall Ghaordaidh 1039m NN514397
+            </option>
+            <option value='56.5521162835565~-4.693581361948907'>
+              Beinn Achaladair 1038m NN344432
+            </option>
+            <option value='57.037533895771084~-3.657125305533742'>
+              Carn a'Mhaim 1037m NN994952
+            </option>
+            <option value='57.17800420436887~-5.250422186435547'>
+              Sgurr a'Bhealaich Dheirg 1036m NH035143
+            </option>
+            <option value='57.09744770240845~-5.236755032037216'>
+              Gleouraich 1035m NH039053
+            </option>
+            <option value='56.855503056777046~-4.452856949199939'>
+              Carn Dearg 1034m NN504764
+            </option>
+            <option value='56.741502887619696~-4.981937874029042'>
+              Am Bodach 1032m NN176650
+            </option>
+            <option value='57.221222821335374~-5.282398918676306'>
+              Beinn Fhada 1032m NH018192
+            </option>
+            <option value='56.38943036731776~-4.774452074598987'>
+              Ben Oss 1029m NN287253
+            </option>
+            <option value='56.87660695250161~-3.5941986141993634'>
+              Carn an Righ 1029m NO028772
+            </option>
+            <option value='56.62252082443174~-4.224139526309382'>
+              Carn Gorm 1029m NN635500
+            </option>
+            <option value='57.10579152844587~-5.330001204849305'>
+              Sgurr a'Mhaoraich 1027m NG983065
+            </option>
+            <option value='57.1811740808655~-5.33513045635141'>
+              Sgurr na Ciste Duibhe 1027m NG984149
+            </option>
+            <option value='56.45484563667052~-4.618509464531281'>
+              Ben Challum 1025m NN386322
+            </option>
+            <option value='56.65412637282288~-5.17088746695873'>
+              Beinn a'Bheithir - Sgorr Dhearg 1024m NN056558
+            </option>
+            <option value='57.560811517644545~-5.491912531203891'>
+              Liathach - Mullach an Rathain 1023m NG911576
+            </option>
+            <option value='57.12486710688188~-5.219314038803336'>
+              Aonach air Chrith 1021m NH051083
+            </option>
+            <option value='56.646367549647344~-4.899360897982604'>
+              Buachaille Etive Mor - Stob Dearg 1021m NN222542
+            </option>
+            <option value='57.07519057833746~-5.591395527414711'>
+              Ladhar Bheinn 1020m NG823039
+            </option>
+            <option value='56.81369857828374~-4.430459070142723'>
+              Beinn Bheoil 1019m NN516717
+            </option>
+            <option value='56.90817595252893~-3.355740992530788'>
+              Carn an Tuirc 1019m NO174804
+            </option>
+            <option value='57.01250756359716~-3.8404952686301312'>
+              Mullach Clach a'Bhlair 1019m NN882927
+            </option>
+            <option value='57.70970789114379~-5.26942042292965'>
+              Mullach Coire Mhic Fhearchair 1019m NH052735
+            </option>
+            <option value='57.00922298160406~-5.443301803839372'>
+              Garbh Chioch Mhor 1013m NM909961
+            </option>
+            <option value='56.92786853741053~-3.2775765015248415'>
+              Cairn Bannoch 1012m NO222825
+            </option>
+            <option value='56.23659309080753~-4.81503853111812'>
+              Beinn Ime 1011m NN255084
+            </option>
+            <option value='56.83541453534002~-4.328568776020941'>
+              Beinn Udlamain 1011m NN579739
+            </option>
+            <option value='57.59402694100814~-5.428124570316011'>
+              Beinn Eighe - Ruadh-stac Mor 1010m NG951611
+            </option>
+            <option value='57.137678654854085~-5.279953586464238'>
+              Sgurr an Doire Leathain 1010m NH015099
+            </option>
+            <option value='56.74986349205699~-4.894245443569071'>
+              Sgurr Eilde Mor 1010m NN230657
+            </option>
+            <option value='57.16289816640785~-5.412909916570634'>
+              The Saddle 1010m NG936131
+            </option>
+            <option value='56.87707913220267~-3.883071049061253'>
+              Beinn Dearg 1008m NN852777
+            </option>
+            <option value='57.46475359376385~-5.109035499864983'>
+              Maoile Lunndaidh 1007m NH135458
+            </option>
+            <option value='56.93199467756097~-3.7527022694214156'>
+              An Sgarsoch 1006m NN933836
+            </option>
+            <option value='56.979225402087835~-4.513662192304003'>
+              Carn Liath 1006m NN472903
+            </option>
+            <option value='57.30605058730653~-5.128838960560138'>
+              Beinn Fhionnlaidh 1005m NH115282
+            </option>
+            <option value='56.530116771114784~-4.713164396910013'>
+              Beinn an Dothaidh 1004m NN331408
+            </option>
+            <option value='57.14173041468527~-5.296849532965664'>
+              Sgurr an Lochain 1004m NH005104
+            </option>
+            <option value='57.036239976358544~-3.6867352256383854'>
+              The Devil's Point 1004m NN976951
+            </option>
+            <option value='57.02876461038387~-5.35277987345553'>
+              Sgurr Mor 1003m NM965980
+            </option>
+            <option value='57.19196315814299~-5.089372659052958'>
+              Sail Chaorainn [1921-1974: Tigh Mor na Seilge SSW Top] 1002m NH133154
+            </option>
+            <option value='57.18893791341663~-5.347421851236172'>
+              Sgurr na Carnach 1002m NG977158
+            </option>
+            <option value='57.1732195088466~-5.226830525444763'>
+              Aonach Meadhoin 1001m NH049137
+            </option>
+            <option value='56.65076813821201~-5.196718254680874'>
+              Beinn a'Bheithir - Sgorr Dhonuill 1001m NN040555
+            </option>
+            <option value='56.56797351782842~-4.157445520466209'>
+              Meall Greigh 1001m NN674438
+            </option>
+            <option value='57.69264572733487~-5.08993900113752'>
+              Sgurr Breac 999m NH158711
+            </option>
+            <option value='57.451528350274195~-5.206301120008567'>
+              Sgurr Choinnich 999m NH076446
+            </option>
+            <option value='56.74394932201355~-5.029575587773706'>
+              Stob Ban 999m NN147654
+            </option>
+            <option value='58.138536083161945~-4.8565738788794155'>
+              Ben More Assynt 998m NC318201
+            </option>
+            <option value='56.919184917217315~-3.247707416564673'>
+              Broad Cairn 998m NO240815
+            </option>
+            <option value='56.43139352291516~-5.090648909351432'>
+              Stob Diamh 998m NN094308
+            </option>
+            <option value='57.69443095197562~-5.127023406418706'>
+              A'Chailleach 997m NH136714
+            </option>
+            <option value='56.54230825264893~-5.003676530223738'>
+              Glas Bheinn Mhor 997m NN153429
+            </option>
+            <option value='57.089619516708375~-5.191486098064499'>
+              Spidean Mialach 996m NH066043
+            </option>
+            <option value='56.33878446849456~-4.623496963403247'>
+              An Caisteal 995m NN378193
+            </option>
+            <option value='56.9367057594942~-3.800594583119577'>
+              Carn an Fhidhleir [Carn Ealar] 994m NN904842
+            </option>
+            <option value='56.62049025155541~-5.078375353135706'>
+              Sgor na h-Ulaidh 994m NN111518
+            </option>
+            <option value='57.58215009350802~-5.401899708551278'>
+              Beinn Eighe - Spidean Coire nan Clach 993m NG966597
+            </option>
+            <option value='57.44210703588556~-4.850384605664946'>
+              Sgurr na Ruaidhe 993m NH289426
+            </option>
+            <option value='57.45316579114491~-4.877925543569666'>
+              Carn nan Gobhar 992m NH273439
+            </option>
+            <option value='57.36345168054019~-5.0239326717507975'>
+              Carn nan Gobhar 992m NH181343
+            </option>
+            <option value='57.20659393175137~-6.222258073809441'>
+              Sgurr Alasdair 992m NG450207
+            </option>
+            <option value='56.828809404579104~-4.297011493733548'>
+              Sgairneach Mhor 991m NN598731
+            </option>
+            <option value='56.45097589338864~-5.025680922196367'>
+              Beinn Eunaich 989m NN135328
+            </option>
+            <option value='57.71884965444593~-5.263525532386228'>
+              Sgurr Ban 989m NH056745
+            </option>
+            <option value='58.13616897039765~-4.881874363425134'>
+              Conival 987m NC303199
+            </option>
+            <option value='56.8548226386421~-3.3866129599567545'>
+              Creag Leacach 987m NO154745
+            </option>
+            <option value='57.126732989045436~-5.181457408517527'>
+              Druim Shionnach 987m NH074084
+            </option>
+            <option value='56.936200800458145~-5.283611507605079'>
+              Gulvain [Gaor Bheinn] 987m NN002875
+            </option>
+            <option value='57.590941722102166~-5.571818991209614'>
+              Beinn Alligin - Sgurr Mhor 986m NG865612
+            </option>
+            <option value='57.41338938617816~-5.2212894335545945'>
+              Lurg Mhor 986m NH065404
+            </option>
+            <option value='57.21342750364154~-6.232985740603676'>
+              Sgurr Dearg - Inaccessible Pinnacle 986m NG444215
+            </option>
+            <option value='56.343121699204445~-4.217559263254761'>
+              Ben Vorlich 985m NN629189
+            </option>
+            <option value='56.758979506689386~-4.965321076353062'>
+              An Gearanach 982m NN187669
+            </option>
+            <option value='57.28396193894947~-5.185063196107791'>
+              Mullach na Dheiragain 982m NH080259
+            </option>
+            <option value='57.12764596429425~-5.250963389238686'>
+              Maol Chinn-dearg 981m NH032087
+            </option>
+            <option value='56.62061024801716~-4.127843958455774'>
+              Meall na Aighean 981m NN694496
+            </option>
+            <option value='57.66724763087329~-5.346120748750358'>
+              Slioch 981m NH004690
+            </option>
+            <option value='56.75082638428802~-4.967950685075364'>
+              Stob Coire a'Chairn 981m NN185660
+            </option>
+            <option value='56.449941078701194~-5.067805443874783'>
+              Beinn a'Chochuill 980m NN109328
+            </option>
+            <option value='57.19978298362133~-5.207617945747783'>
+              Ciste Dhubh 979m NH062166
+            </option>
+            <option value='56.831656345127094~-4.69395455856006'>
+              Stob Coire Sgriodain 979m NN356743
+            </option>
+            <option value='56.391048061223216~-4.74215640906578'>
+              Beinn Dubhchraig 978m NN307254
+            </option>
+            <option value='57.79148581800138~-4.90145641624013'>
+              Cona' Mheall 978m NH275816
+            </option>
+            <option value='57.79886393899169~-4.932351464546266'>
+              Meall nan Ceapraichean 977m NH257825
+            </option>
+            <option value='56.811338496187325~-4.839987147787618'>
+              Stob Ban 977m NN266724
+            </option>
+            <option value='56.8568196786144~-4.288885191525609'>
+              A'Mharconaich 975m NN604762
+            </option>
+            <option value='56.873702736348044~-3.4644368608904546'>
+              Carn a'Gheoidh 975m NO107767
+            </option>
+            <option value='56.80813528061059~-3.7420015280261865'>
+              Carn Liath 975m NN936698
+            </option>
+            <option value='56.329305289868756~-4.236171294914518'>
+              Stuc a'Chroin 975m NN617174
+            </option>
+            <option value='57.153812730951124~-5.57751246928656'>
+              Beinn Sgritheall 974m NG836126
+            </option>
+            <option value='56.19030511556526~-4.631083329317603'>
+              Ben Lomond 974m NN367028
+            </option>
+            <option value='57.228714337974246~-6.233081373593848'>
+              Sgurr a'Ghreadaidh 972m NG445232
+            </option>
+            <option value='56.638131605141986~-4.205486445187974'>
+              Meall Garbh 968m NN647517
+            </option>
+            <option value='57.72029166667689~-5.345979286685964'>
+              A'Mhaighdean 967m NH007749
+            </option>
+            <option value='56.679969094103754~-5.0358656496889225'>
+              Sgor nam Fiannaidh 967m NN140583
+            </option>
+            <option value='56.42473142925084~-6.01336271820711'>
+              Ben More 966m NM525330
+            </option>
+            <option value='57.221267779118676~-6.2405172199289565'>
+              Sgurr na Banachdich 965m NG440224
+            </option>
+            <option value='57.248076589838455~-6.192165035928903'>
+              Sgurr nan Gillean 964m NG471252
+            </option>
+            <option value='56.86153183712919~-3.778934452376075'>
+              Carn a'Chlamain 963m NN915758
+            </option>
+            <option value='56.93702855047555~-5.387297991137798'>
+              Sgurr Thuilm 963m NM939879
+            </option>
+            <option value='58.23583549880554~-4.409437279298613'>
+              Ben Klibreck - Meall nan Con 962m NC585299
+            </option>
+            <option value='57.49933253569647~-5.4058734273422'>
+              Sgorr Ruadh 962m NG959505
+            </option>
+            <option value='56.52057743261034~-5.01008743105814'>
+              Beinn nan Aighenan 960m NN148405
+            </option>
+            <option value='56.57117091239521~-4.468605200896209'>
+              Stuchd an Lochain 960m NN483448
+            </option>
+            <option value='56.601002352382665~-5.102866474317603'>
+              Beinn Fhionnlaidh 959m NN095497
+            </option>
+            <option value='56.455466153472116~-4.5455026156053595'>
+              Meall Glas 959m NN431321
+            </option>
+            <option value='57.24752316970221~-6.208693884638189'>
+              Bruach na Frithe 958m NG461252
+            </option>
+            <option value='56.638434603457256~-4.968900937053936'>
+              Buachaille Etive Beag - Stob Dubh 958m NN179535
+            </option>
+            <option value='56.90521025790445~-3.2965102668334825'>
+              Tolmount 958m NO210800
+            </option>
+            <option value='57.16643359205251~-5.067385076273232'>
+              Carn Ghluasaid 957m NH145125
+            </option>
+            <option value='56.89358444408775~-3.291182141864949'>
+              Tom Buidhe 957m NO213787
+            </option>
+            <option value='56.629887951098645~-4.950288060887789'>
+              Buachaille Etive Mor - Stob na Broige 956m NN190525
+            </option>
+            <option value='57.18171480680745~-5.280547109768512'>
+              Saileag 956m NH017148
+            </option>
+            <option value='56.93626457145602~-5.448081983840429'>
+              Sgurr nan Coireachan 956m NM902880
+            </option>
+            <option value='56.77275159259887~-4.545671915726175'>
+              Sgor Gaibhre 955m NN444674
+            </option>
+            <option value='57.706763452800914~-4.988707241009096'>
+              Beinn Liath Mhor Fannaich 954m NH219724
+            </option>
+            <option value='57.77191869290404~-4.852784923822968'>
+              Am Faochagach 953m NH303793
+            </option>
+            <option value='56.53428078384275~-4.645138916959229'>
+              Beinn Mhanach 953m NN373411
+            </option>
+            <option value='56.680799399965274~-5.0016341075122375'>
+              Meall Dearg 953m NN161583
+            </option>
+            <option value='57.00761247743847~-5.403604630177935'>
+              Sgurr nan Coireachan 953m NM933958
+            </option>
+            <option value='56.964198612973675~-4.111203046347655'>
+              Meall Chuaich 951m NN716878
+            </option>
+            <option value='57.68082636353122~-4.983214461613015'>
+              Meall Gorm 949m NH221695
+            </option>
+            <option value='56.32708728297363~-4.905836685748829'>
+              Beinn Bhuidhe 948m NN203187
+            </option>
+            <option value='57.20928181190013~-6.222565485707791'>
+              Sgurr Mhic Choinnich 948m NG450210
+            </option>
+            <option value='57.12099623403594~-5.159479824672133'>
+              Creag a'Mhaim 947m NH087077
+            </option>
+            <option value='56.84782263855463~-3.1944988113288946'>
+              Driesh 947m NO271735
+            </option>
+            <option value='56.3427629584193~-4.562265883486515'>
+              Beinn Tulaichean 946m NN416196
+            </option>
+            <option value='56.93096941918434~-3.5587159719718584'>
+              Carn Bhac 946m NO051832
+            </option>
+            <option value='57.031576449363435~-5.544308366606679'>
+              Meall Buidhe 946m NM849989
+            </option>
+            <option value='57.14720353060645~-5.394922813421593'>
+              Sgurr na Sgine 946m NG946113
+            </option>
+            <option value='57.41988143334574~-5.248519623079687'>
+              Bidein a'Choire Sheasgaich 945m NH049412
+            </option>
+            <option value='57.092949489809946~-4.252242074145539'>
+              Carn Dearg 945m NH635024
+            </option>
+            <option value='56.573200422986346~-4.836757484873999'>
+              Stob a'Choire Odhair 945m NN257459
+            </option>
+            <option value='56.901896152067884~-3.511522162327234'>
+              An Socach 944m NO079799
+            </option>
+            <option value='57.20519067894516~-6.210496595623138'>
+              Sgurr Dubh Mor 944m NG457205
+            </option>
+            <option value='56.273943800450375~-4.7531545371711745'>
+              Ben Vorlich 943m NN295124
+            </option>
+            <option value='56.76746729237706~-4.910333552710592'>
+              Binnein Beag 943m NN221677
+            </option>
+            <option value='56.76017439589989~-4.589004640705932'>
+              Carn Dearg 941m NN417661
+            </option>
+            <option value='56.91192593867896~-4.172323539562524'>
+              Carn na Caim 941m NN677821
+            </option>
+            <option value='56.33304626848654~-4.597212932840082'>
+              Beinn a'Chroin [Beinn a'Chroin East Top] 940m NN394186
+            </option>
+            <option value='57.04864532278965~-5.512941228454657'>
+              Luinne Bheinn 939m NG869007
+            </option>
+            <option value='56.9701557972093~-2.971386241151878'>
+              Mount Keen 939m NO409869
+            </option>
+            <option value='56.75012733825642~-5.070980491210789'>
+              Mullach nan Coirean 939m NN122662
+            </option>
+            <option value='56.56608506558286~-5.168396447134951'>
+              Beinn Sgulaird 937m NN053460
+            </option>
+            <option value='57.70286506776072~-5.2906334554841035'>
+              Beinn Tarsuinn 937m NH039728
+            </option>
+            <option value='57.007976591376085~-4.9274566688016215'>
+              Sron a'Choire Ghairbh 937m NN222945
+            </option>
+            <option value='56.870139722077354~-4.197797436759992'>
+              A'Bhuidheanach Bheag 936m NN660775
+            </option>
+            <option value='56.78927955250979~-4.658158492831978'>
+              Beinn na Lap 935m NN376695
+            </option>
+            <option value='57.248640775865674~-6.202184553655532'>
+              Am Basteir 934m NG465253
+            </option>
+            <option value='57.71343761981899~-5.048042290642647'>
+              Meall a'Chrasgaidh 934m NH184733
+            </option>
+            <option value='56.32584063768891~-4.6404047487403215'>
+              Beinn Chabhair 933m NN367179
+            </option>
+            <option value='57.611462668988906~-5.101464373066937'>
+              Fionn Bheinn 933m NH147621
+            </option>
+            <option value='57.49236337118088~-5.463662301329757'>
+              Maol Chean-dearg 933m NG924499
+            </option>
+            <option value='56.87960310701323~-3.420354618967421'>
+              The Cairnwell 933m NO134773
+            </option>
+            <option value='56.617434136550706~-4.447171846192213'>
+              Meall Buidhe 932m NN498499
+            </option>
+            <option value='57.055050331730925~-3.5523691886311624'>
+              Beinn Bhreac 931m NO058970
+            </option>
+            <option value='56.453929536949936~-3.9902949106928935'>
+              Ben Chonzie 931m NN773308
+            </option>
+            <option value='57.10955210622192~-4.1772729161564826'>
+              A'Chailleach 930m NH681041
+            </option>
+            <option value='57.21988006375683~-6.092804282884288'>
+              Bla Bheinn [Blaven] 928m NG529217
+            </option>
+            <option value='56.84912267753276~-3.245374876852095'>
+              Mayar 928m NO240737
+            </option>
+            <option value='56.56177023815064~-4.941724188686357'>
+              Meall nan Eun 928m NN192449
+            </option>
+            <option value='57.50012077509733~-5.168818276006123'>
+              Moruisg 928m NH101499
+            </option>
+            <option value='56.22102280258864~-4.788080252137588'>
+              Beinn Narnain 927m NN271066
+            </option>
+            <option value='58.41349374205949~-4.606507450136837'>
+              Ben Hope 927m NC477501
+            </option>
+            <option value='57.814154165463606~-4.9319092262366135'>
+              Eididh nan Clach Geala 927m NH258842
+            </option>
+            <option value='57.51211219536286~-5.39871268340459'>
+              Beinn Liath Mhor 926m NG964519
+            </option>
+            <option value='57.057483640545875~-4.372148835562615'>
+              Geal Charn 926m NN561987
+            </option>
+            <option value='56.5670803339742~-4.258326433552477'>
+              Meall a'Choire Leith 926m NN612439
+            </option>
+            <option value='57.84734058406904~-4.895835805655451'>
+              Seana Bhraigh 926m NH281878
+            </option>
+            <option value='56.65056425236186~-4.950271874425288'>
+              Buachaille Etive Beag - Stob Coire Raineach 925m NN191548
+            </option>
+            <option value='56.8998328402086~-4.483686084523327'>
+              Creag Pitridh 924m NN487814
+            </option>
+            <option value='57.19623092477204~-6.209475182023235'>
+              Sgurr nan Eag 924m NG457195
+            </option>
+            <option value='57.66815498615721~-4.9486245127239235'>
+              An Coileachan 923m NH241680
+            </option>
+            <option value='57.68114347955107~-5.045328820686975'>
+              Sgurr nan Each 923m NH184697
+            </option>
+            <option value='57.5807953337523~-5.580866610794922'>
+              Beinn Alligin - Tom na Gruagaich 922m NG859601
+            </option>
+            <option value='57.258283788527685~-5.169574078572125'>
+              An Socach 921m NH088230
+            </option>
+            <option value='56.4528964016838~-4.495011983210937'>
+              Sgiath Chuil 921m NN462317
+            </option>
+            <option value='57.12487140200497~-4.174867536844201'>
+              Carn Sgulain 920m NH683058
+            </option>
+            <option value='57.04482523210107~-5.2552635598819935'>
+              Gairich 919m NN025995
+            </option>
+            <option value='57.25576852257741~-5.302061501990507'>
+              A'Ghlas-bheinn 918m NH008231
+            </option>
+            <option value='57.147945454989554~-5.333791118743702'>
+              Creag nan Damh 918m NG983112
+            </option>
+            <option value='56.989057224888214~-4.929263663063927'>
+              Meall na Teanga 918m NN220924
+            </option>
+            <option value='57.72705560576334~-5.328119689177952'>
+              Ruadh Stac Mor 918m NH018756
+            </option>
+            <option value='57.23145792558781~-6.2317377490015105'>
+              Sgurr a'Mhadaidh 918m NG446235
+            </option>
+            <option value='56.89577016247707~-3.4209681535849614'>
+              Carn Aosda 917m NO134791
+            </option>
+            <option value='56.874533103970776~-4.303098496999011'>
+              Geal-charn 917m NN596782
+            </option>
+            <option value='57.7459717659379~-5.257565007924789'>
+              Beinn a'Chlaidheimh 916m NH061775
+            </option>
+            <option value='56.390768002293655~-4.834514624023074'>
+              Beinn a'Chleibh 916m NN250256
+            </option>
+            <option value='56.93593775728496~-4.693251204648153'>
+              Beinn Teallach 915m NN361859
+            </option>
+            <option value='56.249959852564~-4.780496328600132'>
+              Ben Vane 915m NN277098
+            </option>
+            <option value='57.48248992445048~-5.190656493832364'>
+              Sgurr nan Ceannaichean 915m NH087480
+            </option>
+          </select>
+        </fieldset><br />
+        <input value="Show Summit Map" type="submit" />
+		<br>
+		<span id="errorSpan"> &nbsp; </span>
+      </fieldset>
+    </form>
+    <hr/>
+    <p>
+      Form validation doesn't work. 
+	  It still submits if you don't select a mountain.
+	  The bug is not in the obfuscated JavaScript.
+	  Observe the form submission and remove a single byte to fix the error.
+    </p>
+    <hr/>
+    <p>
+      <strong>How Bing works (this may change).</strong>
+    </p>
+<pre>
+action http://www.bing.com/maps/default.aspx
+method get
+zoom eg lvl=1 for whole world, lvl=6 for UK and lvl=10 for about 100 sq km
+sty=c (roadmap)
+sty=s (os map, but may default to road atlas when lvl=10
+http://www.bing.com/maps/?v=2&amp;cp=56.79673929192055~-5.002707036835274&amp;lvl=6&amp;dir=0&amp;sty=c&amp;FORM=LMLTCC
+road map
+http://www.bing.com/maps/?v=2&amp;cp=56.79673929192055~-5.002707036835274&amp;lvl=10&amp;dir=0&amp;sty=c&amp;FORM=LMLTCC
+os map
+http://www.bing.com/maps/?v=2&amp;cp=56.79673929192055~-5.002707036835274&amp;lvl=12&amp;dir=0&amp;sty=s&amp;FORM=LMLTCC
+1:50000 zoomed in
+http://www.bing.com/maps/?v=2&amp;cp=56.79673929192055~-5.002707036835274&amp;lvl=13&amp;dir=0&amp;sty=s&amp;FORM=LMLTCC
+</pre>
+<!--
+When using this as a template, copy and paste from View Source.
+DO NOT use Save As which often does not give you the correct/original source code.
+-->
+  </body>
+</html>
